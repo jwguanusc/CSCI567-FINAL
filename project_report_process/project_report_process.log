@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  8 MAY 2026 18:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  9 MAY 2026 16:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/jeremyguan/Desktop/Work/CSCI567-FINAL/final/main.tex
-(/Users/jeremyguan/Desktop/Work/CSCI567-FINAL/final/main.tex
+**/Users/jeremyguan/Desktop/Work/CSCI567-FINAL/project_report_process/project_report_process.tex
+(/Users/jeremyguan/Desktop/Work/CSCI567-FINAL/project_report_process/project_report_process.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -299,8 +299,8 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count306
 \l__pdf_internal_box=\box59
-) (./main.aux)
-\openout1 = `main.aux'.
+) (./project_report_process.aux)
+\openout1 = `project_report_process.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
@@ -365,29 +365,37 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring ON on input line 13.
- (./main.out) (./main.out)
+ (./project_report_process.out) (./project_report_process.out)
 \@outlinefile=\write3
-\openout3 = `main.out'.
+\openout3 = `project_report_process.out'.
 
-<finalGraphComparison.png, id=5, 1116.17pt x 554.07pt>
-File: finalGraphComparison.png Graphic file (type png)
-<use finalGraphComparison.png>
-Package pdftex.def Info: finalGraphComparison.png  used on input line 40.
+<../picture/finalGraphComparison.png, id=5, 1116.17pt x 554.07pt>
+File: ../picture/finalGraphComparison.png Graphic file (type png)
+<use ../picture/finalGraphComparison.png>
+Package pdftex.def Info: ../picture/finalGraphComparison.png  used on input line 43.
 (pdftex.def)             Requested size: 234.8775pt x 116.59485pt.
 
 
-<ultimateStack.png, id=7, 808.01875pt x 792.9625pt>
-File: ultimateStack.png Graphic file (type png)
-<use ultimateStack.png>
-Package pdftex.def Info: ultimateStack.png  used on input line 62.
-(pdftex.def)             Requested size: 234.8775pt x 230.49771pt.
+<../picture/ultimateStack.png, id=7, 808.01875pt x 792.9625pt>
+File: ../picture/ultimateStack.png Graphic file (type png)
+<use ../picture/ultimateStack.png>
+Package pdftex.def Info: ../picture/ultimateStack.png  used on input line 65.
+(pdftex.def)             Requested size: 105.69415pt x 103.71791pt.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 74.
+(Font)              <7> on input line 77.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 74.
+(Font)              <5> on input line 77.
+<../picture/stacking_weights.png, id=9, 696.6025pt x 510.90875pt>
+File: ../picture/stacking_weights.png Graphic file (type png)
+<use ../picture/stacking_weights.png>
+Package pdftex.def Info: ../picture/stacking_weights.png  used on input line 90.
+(pdftex.def)             Requested size: 164.41353pt x 120.58589pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}
@@ -398,33 +406,34 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.82 
+l.99 
      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.82 
-      <./finalGraphComparison.png> <./ultimateStack.png>]
-<stacking_weights.png, id=26, 696.6025pt x 510.90875pt>
-File: stacking_weights.png Graphic file (type png)
-<use stacking_weights.png>
-Package pdftex.def Info: stacking_weights.png  used on input line 87.
-(pdftex.def)             Requested size: 211.3883pt x 155.03566pt.
-<residual_plot.png, id=28, 714.67pt x 497.86pt>
-File: residual_plot.png Graphic file (type png)
-<use residual_plot.png>
-Package pdftex.def Info: residual_plot.png  used on input line 101.
-(pdftex.def)             Requested size: 234.8775pt x 163.6182pt.
+l.99 
+      <../picture/finalGraphComparison.png> <../picture/ultimateStack.png>]
+<../picture/residual_plot.png, id=28, 714.67pt x 497.86pt>
+File: ../picture/residual_plot.png Graphic file (type png)
+<use ../picture/residual_plot.png>
+Package pdftex.def Info: ../picture/residual_plot.png  used on input line 104.
+(pdftex.def)             Requested size: 105.69415pt x 73.62743pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 7796) has occurred while \output is active []
+Underfull \vbox (badness 2469) has occurred while \output is active []
 
 
 
-No file main.bbl.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 130.
+(/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `pcr' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 
@@ -436,33 +445,160 @@ Package fancyhdr Warning: \footskip is too small (0.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.126 \end{document}
-                    
+l.135 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.126 \end{document}
-                     <./stacking_weights.png> <./residual_plot.png>] (./main.aux)
+l.135 
+       <../picture/stacking_weights.png> <../picture/residual_plot.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+<../picture/Lasso_influential_features_withoutSD.png, id=45, 859.2903pt x 570.933pt>
+File: ../picture/Lasso_influential_features_withoutSD.png Graphic file (type png)
+<use ../picture/Lasso_influential_features_withoutSD.png>
+Package pdftex.def Info: ../picture/Lasso_influential_features_withoutSD.png  used on input line 157.
+(pdftex.def)             Requested size: 211.3883pt x 140.45042pt.
+<../picture/lasso_influential_features.png, id=46, 859.2903pt x 570.933pt>
+File: ../picture/lasso_influential_features.png Graphic file (type png)
+<use ../picture/lasso_influential_features.png>
+Package pdftex.def Info: ../picture/lasso_influential_features.png  used on input line 165.
+(pdftex.def)             Requested size: 211.3883pt x 140.45042pt.
+
+Underfull \vbox (badness 1803) has occurred while \output is active []
+
+
+
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.30003pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.30003pt}.
+
+[3
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.190 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.190 
+       <../picture/Lasso_influential_features_withoutSD.png> <../picture/lasso_influential_features.png>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 191.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+
+
+
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.30003pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.30003pt}.
+
+[4
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.285 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.285 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.285 
+      ]
+<../picture/GB_n_estimater.png, id=74, 714.7503pt x 426.393pt>
+File: ../picture/GB_n_estimater.png Graphic file (type png)
+<use ../picture/GB_n_estimater.png>
+Package pdftex.def Info: ../picture/GB_n_estimater.png  used on input line 293.
+(pdftex.def)             Requested size: 105.69415pt x 63.05182pt.
+<../picture/GB_learning_rate.png, id=75, 714.7503pt x 426.393pt>
+File: ../picture/GB_learning_rate.png Graphic file (type png)
+<use ../picture/GB_learning_rate.png>
+Package pdftex.def Info: ../picture/GB_learning_rate.png  used on input line 297.
+(pdftex.def)             Requested size: 105.69415pt x 63.05182pt.
+<../picture/GB_max_depth.png, id=76, 714.7503pt x 426.393pt>
+File: ../picture/GB_max_depth.png Graphic file (type png)
+<use ../picture/GB_max_depth.png>
+Package pdftex.def Info: ../picture/GB_max_depth.png  used on input line 305.
+(pdftex.def)             Requested size: 105.69415pt x 63.05182pt.
+<../picture/GB_sub_sample.png, id=77, 714.7503pt x 426.393pt>
+File: ../picture/GB_sub_sample.png Graphic file (type png)
+<use ../picture/GB_sub_sample.png>
+Package pdftex.def Info: ../picture/GB_sub_sample.png  used on input line 309.
+(pdftex.def)             Requested size: 105.69415pt x 63.05182pt.
+<../picture/GB_min_sample_split.png, id=78, 714.7503pt x 426.393pt>
+File: ../picture/GB_min_sample_split.png Graphic file (type png)
+<use ../picture/GB_min_sample_split.png>
+Package pdftex.def Info: ../picture/GB_min_sample_split.png  used on input line 317.
+(pdftex.def)             Requested size: 105.69415pt x 63.05182pt.
+<../picture/GB_min_sample_leaf.png, id=79, 714.7503pt x 426.393pt>
+File: ../picture/GB_min_sample_leaf.png Graphic file (type png)
+<use ../picture/GB_min_sample_leaf.png>
+Package pdftex.def Info: ../picture/GB_min_sample_leaf.png  used on input line 321.
+(pdftex.def)             Requested size: 105.69415pt x 63.05182pt.
+
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.30003pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.30003pt}.
+
+[5
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.341 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.341 
+       <../picture/GB_n_estimater.png> <../picture/GB_learning_rate.png> <../picture/GB_max_depth.png> <../picture/GB_sub_sample.png> <../picture/GB_min_sample_split.png> <../picture/GB_min_sample_leaf.png>]
+
+
+
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 3.30003pt, for example:
+(fancyhdr)                \setlength{\footskip}{3.30003pt}.
+
+[6
+
+] (./project_report_process.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
+Package rerunfilecheck Info: File `project_report_process.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12199 strings out of 473190
- 193839 string characters out of 5715801
- 635069 words of memory out of 5000000
- 35155 multiletter control sequences out of 15000+600000
- 575291 words of font info for 137 fonts, out of 8000000 for 9000
+ 12474 strings out of 473190
+ 199690 string characters out of 5715801
+ 644723 words of memory out of 5000000
+ 35304 multiletter control sequences out of 15000+600000
+ 581395 words of font info for 198 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,1052b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on main.pdf (2 pages, 223459 bytes).
+ 75i,11n,79p,1087b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on project_report_process.pdf (6 pages, 748631 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 32277 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 157 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 38973 words of extra memory for PDF output out of 42996 (max. 10000000)
 
