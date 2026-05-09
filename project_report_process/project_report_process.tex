@@ -159,12 +159,12 @@ To comprehensively address the "blind spot" and the combinatorial explosion of t
         \toprule
         \textbf{Hyperparameter} & \textbf{Search Range} & \textbf{Best Parameter} \\
         \midrule
-        \texttt{n\_estimators}       & [300, 1500]  & 1308 \\
-        \texttt{learning\_rate}      & [0.01, 0.10] & 0.0243 \\
+        \texttt{n\_estimators}       & [300, 1500]  & 1452 \\
+        \texttt{learning\_rate}      & [0.01, 0.10] & 0.0249 \\
         \texttt{max\_depth}          & [3, 8]       & 3 \\
-        \texttt{subsample}           & [0.6, 1.0]   & 0.7246 \\
-        \texttt{min\_samples\_split} & [2, 20]      & 16 \\
-        \texttt{min\_samples\_leaf}  & [1, 10]      & 5 \\
+        \texttt{subsample}           & [0.6, 1.0]   & 0.6795 \\
+        \texttt{min\_samples\_split} & [2, 20]      & 10 \\
+        \texttt{min\_samples\_leaf}  & [1, 10]      & 7 \\
         \bottomrule
     \end{tabular}%
     }
@@ -183,7 +183,7 @@ Beyond achieving higher predictive accuracy, RandomizedSearchCV demonstrated sup
         \textbf{Optimization Strategy} & \textbf{CV RMSE} & \textbf{Test RMSE} & \textbf{MPE} \\
         \midrule
         GBR (Grid Search) & 0.1264 & 0.1353 & 14.49\% \\
-        \textbf{GBR (Random Search)} & \textbf{0.1237} & \textbf{0.1321} & \textbf{14.13\%} \\
+        \textbf{GBR (Random Search)} & \textbf{0.1249} & \textbf{0.1317} & \textbf{14.08\%} \\
         \bottomrule
     \end{tabular}%
     }
@@ -239,19 +239,19 @@ To empirically validate our stochastic search results and understand the model's
 \end{figure}
 
 \textbf{(1) Diminishing Returns vs. Computational Budget:} 
-The cross-validation error minimized at \texttt{n\_estimators = 1308}. While the curve revealed a distinct plateau after 700 trees (indicating diminishing marginal returns on irreducible noise), the small scale of our dataset rendered the computational overhead negligible. Thus, we retained the full 1308 estimators to strictly maximize precision.
+The cross-validation error minimized at \texttt{n\_estimators = 1452}. While the curve revealed a distinct plateau after 700 trees (indicating diminishing marginal returns on irreducible noise), the small scale of our dataset rendered the computational overhead negligible. Thus, we retained the full 1452 estimators to strictly maximize precision.
 
 \textbf{(2) The Necessity of Stochastic Regularization:} 
-Testing the \texttt{subsample} ratio validated the mathematical necessity of Stochastic Gradient Boosting. Dropping the ratio below 0.3 caused severe underfitting due to information deficit. Conversely, forcing \texttt{subsample = 1.0} disabled stochastic sampling, causing highly correlated trees to collectively memorize noise. The \texttt{RandomizedSearchCV} correctly converged on a "sweet spot" of 0.7246, optimally balancing structural housing information retention with stochastic noise protection.
+Testing the \texttt{subsample} ratio validated the mathematical necessity of Stochastic Gradient Boosting. Dropping the ratio below 0.3 caused severe underfitting due to information deficit. Conversely, forcing \texttt{subsample = 1.0} disabled stochastic sampling, causing highly correlated trees to collectively memorize noise. The \texttt{RandomizedSearchCV} correctly converged on a "sweet spot" of 0.6795, optimally balancing structural housing information retention with stochastic noise protection.
 
 \textbf{(3) Destructive Testing \& Topological Limits:} 
-The most critical insights emerged from stress-testing the node constraints. At \texttt{max\_depth = 3}, a symmetric tree contains up to 8 leaves, yielding a theoretical average capacity of 146 samples per leaf ($1168 \div 8$). Setting \texttt{min\_samples\_leaf} beyond this limit (e.g., 150) triggered observable upward error inflections, and an aggressive threshold of 300 mathematically obliterated the depth-3 advantage ($1168 \div 300 \approx 3.89$ leaves maximum), causing catastrophic underfitting. Similarly, \texttt{min\_samples\_split} exhibited a sudden collapse at 700, reverse-engineering the fact that the maximum sample mass of our primary root nodes lies between 650 and 700. This destructive testing mathematically justifies our final permissive configurations (\texttt{leaf=5}, \texttt{split=16}), which provide essential regularization without paralyzing the tree's fundamental architecture.
+The most critical insights emerged from stress-testing the node constraints. At \texttt{max\_depth = 3}, a symmetric tree contains up to 8 leaves, yielding a theoretical average capacity of 146 samples per leaf ($1168 \div 8$). Setting \texttt{min\_samples\_leaf} beyond this limit (e.g., 150) triggered observable upward error inflections, and an aggressive threshold of 300 mathematically obliterated the depth-3 advantage ($1168 \div 300 \approx 3.89$ leaves maximum), causing catastrophic underfitting. Similarly, \texttt{min\_samples\_split} exhibited a sudden collapse at 700, reverse-engineering the fact that the maximum sample mass of our primary root nodes lies between 650 and 700. This destructive testing mathematically justifies our final permissive configurations (\texttt{leaf=7}, \texttt{split=10}), which provide essential regularization without paralyzing the tree's fundamental architecture.
 
 \subsection{Architectural Synthesis: From Hybrid to Stacking}
 
 While the Gradient Boosting Regressor (GBR) demonstrated strong individual performance, it suffers from a fundamental limitation inherent to tree-based models: the lack of \textbf{extrapolation capability}. Because decision trees partition the feature space into constant leaf values, they cannot inherently predict values beyond the maximum price encountered in the training set. To mitigate this, we initially implemented a \textbf{Hybrid Ensemble} by blending our regularized Lasso model with GBR. Using cross-validation, we performed a grid search across a range of blending ratios (from 1:0 to 0:1) to identify the optimal weight distribution between linear trends and non-linear nuances.
 
-Subsequently, we transitioned to a formal \textbf{Stacking Architecture} to allow the model to autonomously learn the optimal combination of expert predictions. We evaluated three baseline configurations: (Lasso + Ridge + GBR), (Lasso + GBR), and (Ridge + GBR). Interestingly, our results indicated that all three combinations yielded near-identical test errors. This empirical finding confirms that Lasso and Ridge, both belonging to the linear paradigm, offer redundant inductive biases; thus, shifting weights between them does not contribute to additional predictive gain.
+Subsequently, we transitioned to a formal Stacking Architecture to allow the model to autonomously learn the optimal combination of expert predictions. We evaluated three baseline configurations: (Lasso + Ridge + GBR), (Lasso + GBR), and (Ridge + GBR). Interestingly, our empirical results revealed a distinct divergence in performance, with the (Ridge + GBR) configuration yielding the highest test error. Conversely, the lean (Lasso + GBR) combination performed just as effectively as the full three-model ensemble. This finding indicates that rather than offering redundant linear biases, Lasso provides a significantly stronger and more complementary signal to the non-linear GBR, likely due to its L1 regularization inherently performing feature selection.
 
 \subsection{The Final Frontier: Integrating XGBoost}
 
