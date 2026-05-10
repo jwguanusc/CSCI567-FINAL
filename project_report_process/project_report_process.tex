@@ -34,7 +34,7 @@ This project investigates house price prediction using the Kaggle House Prices d
 \section{Introduction}
 
 This project investigates house price prediction using the Kaggle House Prices: Advanced Regression Techniques dataset \href{https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques}
-{Kaggle House Prices Competition}. The task involves predicting housing sale prices from a mixture of numerical and categorical housing features, including property size, quality, neighborhood information, and construction details. Because housing prices depend on complex feature interactions and nonlinear relationships, this dataset provides an interesting setting for studying the performance and limitations of different machine learning models.
+{Kaggle House Prices Competition}. Because housing prices depend on complex feature interactions and nonlinear relationships, this dataset provides an interesting setting for studying the performance and limitations of different machine learning models.
 
 Our project began as a comparison of regression approaches including Linear Regression, Ridge, Lasso, and nonlinear boosting methods. Over time, the project evolved into a more analytical investigation of when linear models become insufficient and whether combining linear and nonlinear models can improve the prediction's performance.We explored ensemble approaches including weighted hybrid models and stacking architectures.
 
@@ -159,27 +159,27 @@ received the largest weights, indicating that nonlinear tree-based learners cont
 Lasso Regression still provided complementary predictive information, suggesting that combining both linear and nonlinear modeling 
 approaches improved overall ensemble performance.
 
-\subsection{Residual Analysis}
+% \subsection{Residual Analysis}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.45\linewidth]{../picture/residual_plot.png}
-\caption{Residual plot of the Ultimate Stacking model. Residuals remain centered near zero, indicating limited systematic prediction bias.}
-\label{fig:residuals}
-\end{figure}
+% \begin{figure}[h]
+% \centering
+% \includegraphics[width=0.45\linewidth]{../picture/residual_plot.png}
+% \caption{Residual plot of the Ultimate Stacking model. Residuals remain centered near zero, indicating limited systematic prediction bias.}
+% \label{fig:residuals}
+% \end{figure}
 
-Figure~\ref{fig:residuals} shows the residual distribution of the Ultimate Stacking model. Most residuals remain concentrated around zero, indicating that the model does not exhibit strong systematic prediction bias. Larger residual variance appears primarily among expensive homes, suggesting that luxury properties remain more difficult to predict accurately due to rare or highly nonlinear housing characteristics.
-Manual inspection of several high-error predictions revealed that many poorly predicted homes contained uncommon feature combinations, including unusually large living areas, premium neighborhoods, and extensive renovations. These rare housing configurations were underrepresented in the training data, making accurate generalization more challenging for the ensemble model.
-\subsection{Discussion}
+% Figure~\ref{fig:residuals} shows the residual distribution of the Ultimate Stacking model. Most residuals remain concentrated around zero, indicating that the model does not exhibit strong systematic prediction bias. Larger residual variance appears primarily among expensive homes, suggesting that luxury properties remain more difficult to predict accurately due to rare or highly nonlinear housing characteristics.
+% Manual inspection of several high-error predictions revealed that many poorly predicted homes contained uncommon feature combinations, including unusually large living areas, premium neighborhoods, and extensive renovations. These rare housing configurations were underrepresented in the training data, making accurate generalization more challenging for the ensemble model.
+% \subsection{Discussion}
 
-Overall, the experimental results demonstrate that ensemble learning provides the strongest predictive performance for tabular housing datasets. 
-While regularized linear models improved substantially over the baseline regression model, nonlinear boosting approaches captured more complex 
-relationships between housing attributes and sale prices. Combining both linear and nonlinear learners within the Ultimate Stacking framework 
-produced the most accurate and robust predictions across the full range of housing prices.
+% Overall, the experimental results demonstrate that ensemble learning provides the strongest predictive performance for tabular housing datasets. 
+% While regularized linear models improved substantially over the baseline regression model, nonlinear boosting approaches captured more complex 
+% relationships between housing attributes and sale prices. Combining both linear and nonlinear learners within the Ultimate Stacking framework 
+% produced the most accurate and robust predictions across the full range of housing prices.
 
-The results also highlight the importance of preprocessing and feature engineering. Missing-value handling, log transformation, one-hot encoding, 
-and feature scaling all contributed to improving model stability and reducing overfitting. These findings suggest that both data preprocessing 
-and ensemble learning are critical for achieving strong performance on structured real-world machine learning problems.
+% The results also highlight the importance of preprocessing and feature engineering. Missing-value handling, log transformation, one-hot encoding, 
+% and feature scaling all contributed to improving model stability and reducing overfitting. These findings suggest that both data preprocessing 
+% and ensemble learning are critical for achieving strong performance on structured real-world machine learning problems.
 
 % =========================================== End of Result ================================================
 
@@ -379,13 +379,6 @@ really was. A lot of the work in the Process section
 (the Condition2\_PosN outlier diagnosis, the leaf/split stress
 testing, etc.) does not show up in the final RMSE table but took
 significant time, so we want to flag it here.
-
-We used the Kaggle \emph{House Prices: Advanced Regression
-Techniques} dataset and did not collect anything ourselves. The
-link to the dataset and our code is in the
-repository.The
-repository has a single notebook plus a short list of commands in
-the README to reproduce all the numbers in the report.
 
 For libraries, scikit-learn did most of the heavy lifting
 (cross-validation, hyperparameter search, the stacking and voting
