@@ -355,6 +355,88 @@ Transitioning to a Stacking Architecture, we evaluated three configurations: (La
 
 To further push the performance boundary, we integrated \textbf{XGBoost} into our ensemble. Unlike standard GBR, XGBoost incorporates advanced L1 and L2 regularization directly into its objective function, making it superior at handling the high-dimensional sparsity present in the Ames dataset. In our final architectural optimization, we pruned the redundant Ridge model and established a three-pillar Stacking framework comprising \textbf{Lasso, GBR, and XGBoost}. This synthesis successfully leveraged Lasso's global anchoring with the dual tree-based models' mastery of non-linear interactions, ultimately achieving our most robust and precise predictive performance (Test RMSE: 0.1287).
 
+\section{Contributions}
+
+Our project compares linear, regularized, and ensemble methods on
+the Kaggle House Prices dataset. We started from a plain linear
+regression and ended with a stacked ensemble of Lasso, Gradient
+Boosting, and XGBoost. We did not chase the lowest RMSE only.
+A lot of time went into figuring out why each model failed before
+we moved to the next one. The OLS baseline, for example, gave
+huge weights to sparse one-hot features. Once we understood that,
+the move to Lasso and Ridge made sense, and the same kind of
+reasoning led us to the tree-based models later on.
+
+The full list of models we built and tuned is: OLS as a baseline;
+Lasso and Ridge with cross-validated regularization; Gradient
+Boosting with both grid search and randomized search; XGBoost; a
+weighted hybrid of Lasso and Gradient Boosting; and three stacking
+setups, with the final one being Lasso + Gradient Boosting +
+XGBoost. We also compared raw features, StandardScaler, and the
+Yeo--Johnson transform, and ran validation curves on six gradient
+boosting hyperparameters to see how stable the tuned configuration
+really was. A lot of the work in the Process section
+(the Condition2\_PosN outlier diagnosis, the leaf/split stress
+testing, etc.) does not show up in the final RMSE table but took
+significant time, so we want to flag it here.
+
+We used the Kaggle \emph{House Prices: Advanced Regression
+Techniques} dataset and did not collect anything ourselves. The
+link to the dataset and our code is in the
+repository.The
+repository has a single notebook plus a short list of commands in
+the README to reproduce all the numbers in the report.
+
+For libraries, scikit-learn did most of the heavy lifting
+(cross-validation, hyperparameter search, the stacking and voting
+regressors). XGBoost was used for the boosting model, and pandas,
+NumPy, SciPy, Matplotlib, and Seaborn for the rest. Two public
+Kaggle notebooks (jesucristo, 2017; mviola, 2018) helped us with
+some of the feature-engineering choices.
+
+\section{AI Usage}
+
+We used AI tools (mostly Claude) during the project. How much we
+relied on them depended on what we were doing.
+
+We did not use AI much for ideation. The general direction --
+comparing linear, regularized, and ensemble models on a tabular
+regression task -- came from the course content and from looking
+at top Kaggle solutions. The choice of which models to add at
+which stage was ours. We sometimes asked AI for a quick second
+opinion (for example, whether stacking on top of a strong gradient
+boosting model was worth trying), but we did not let it pick the
+direction.
+
+Coding was where AI helped the most. A lot of the
+\texttt{scikit-learn} setup is repetitive -- KFold splits,
+\texttt{GridSearchCV} parameter grids, stacking pipelines, and
+matplotlib plots like the validation curves and feature importance
+charts. AI was a fast way to get the first version of those, which
+we then read through, ran, and tweaked to fit our pipeline. We
+also used it to figure out a few \texttt{scikit-learn} error
+messages and parameter combinations that did not behave as we
+expected.
+
+For literature review we did not use AI at all. The references in
+this paper were found through the course materials, the Kaggle
+forum, and following citations from one paper to another, and we
+read them ourselves. We were aware of the issue with hallucinated
+citations, so we manually checked each reference against the
+actual source.
+
+Sometimes we used AI as a quick reference when a concept was not
+clear, for example why \texttt{StandardScaler} alone is not enough
+when the features are heavily skewed, or how out-of-fold
+predictions feed into a stacking ensemble. These were starting
+points -- the actual choices in our pipeline came from our own
+experiments.
+
+For writing, AI was used to polish the language of paragraphs we
+had already drafted, and to fix awkward phrasing. The numbers, the
+figures, and the analysis itself are ours, and we take
+responsibility for the contents of this report.
+
 \bibliographystyle{icml2021}
 \bibliography{main}
 

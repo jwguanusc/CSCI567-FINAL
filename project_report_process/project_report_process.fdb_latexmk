@@ -1,22 +1,22 @@
 # Fdb version 4
-["bibtex project_report_process"] 1778401714.93215 "project_report_process.aux" "project_report_process.bbl" "project_report_process" 1778401715.04802 0
-  "./icml2021.bst" 1778401016.59748 27147 754d35bad1e0551f1b55824eb3875247 ""
-  "./main.bib" 1778401714.74517 3941 740709c232296a6189bbb7458c0d5518 ""
-  "project_report_process.aux" 1778401681.69089 2871 989a1b5c0ad2782fc507bb6b6cf2a07c "pdflatex"
+["bibtex project_report_process"] 1778432736.70826 "project_report_process.aux" "project_report_process.bbl" "project_report_process" 1778432856.67897 0
+  "./icml2021.bst" 1778432657.4321 27147 754d35bad1e0551f1b55824eb3875247 ""
+  "./main.bib" 1778432657.43259 3941 740709c232296a6189bbb7458c0d5518 ""
+  "project_report_process.aux" 1778432856.32661 2871 c98ea36dd97cfbd79f2de237c8cfc90a "pdflatex"
   (generated)
   "project_report_process.bbl"
   "project_report_process.blg"
   (rewritten before read)
-["pdflatex"] 1778401680.63732 "/Users/jeremyguan/Desktop/Work/CSCI567-FINAL/project_report_process/project_report_process.tex" "project_report_process.pdf" "project_report_process" 1778401715.04807 0
-  "../picture/Lasso_influential_features_withoutSD.png" 1778401016.58678 103942 d4216e954de7e5a52a8c37d463846c54 ""
-  "../picture/finalGraphComparison.png" 1778401016.59202 67163 b60847b3d66d150f564e3c24e13776d7 ""
-  "../picture/hybrid_optimization.png" 1778401016.59286 67958 04b9075bbfcc2f77bbe4860fb4dea486 ""
-  "../picture/lasso_influential_features.png" 1778401016.59395 100239 a52607c39375a6d7231badba1a7c9090 ""
-  "../picture/pipeline_2.png" 1778401049.76468 417025 cf9ce6d615853eb68b318a3fafcac0aa ""
-  "../picture/residual_plot.png" 1778401016.59607 59493 13484611be34f58ea6252420ef310c13 ""
-  "../picture/stacking_weights.png" 1778401016.5968 37180 3dc9a58c557b6b66a22fd4012d5a55c2 ""
-  "../picture/ultimateStack.png" 1778401016.59725 98207 27d3266480aae2bd233390d498cfb355 ""
-  "/Users/jeremyguan/Desktop/Work/CSCI567-FINAL/project_report_process/project_report_process.tex" 1778401692.83105 28318 0acaf0e5561fb5e04251c9a8e7fd73d8 ""
+["pdflatex"] 1778432854.83797 "/Users/jeremyguan/Desktop/Work/CSCI567-FINAL/project_report_process/project_report_process.tex" "project_report_process.pdf" "project_report_process" 1778432856.67914 0
+  "../picture/Lasso_influential_features_withoutSD.png" 1778432657.41879 103942 d4216e954de7e5a52a8c37d463846c54 ""
+  "../picture/finalGraphComparison.png" 1778432657.42426 67163 b60847b3d66d150f564e3c24e13776d7 ""
+  "../picture/hybrid_optimization.png" 1778432657.42521 67958 04b9075bbfcc2f77bbe4860fb4dea486 ""
+  "../picture/lasso_influential_features.png" 1778432657.42625 100239 a52607c39375a6d7231badba1a7c9090 ""
+  "../picture/pipeline_2.png" 1778432657.42905 417025 cf9ce6d615853eb68b318a3fafcac0aa ""
+  "../picture/residual_plot.png" 1778432657.43031 59493 13484611be34f58ea6252420ef310c13 ""
+  "../picture/stacking_weights.png" 1778432657.43132 37180 3dc9a58c557b6b66a22fd4012d5a55c2 ""
+  "../picture/ultimateStack.png" 1778432657.43189 98207 27d3266480aae2bd233390d498cfb355 ""
+  "/Users/jeremyguan/Desktop/Work/CSCI567-FINAL/project_report_process/project_report_process.tex" 1778432854.62841 32314 e64f3f8f316467288f884f9b8c593a89 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -113,11 +113,11 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1764408798 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "icml2021.sty" 1778401016.59771 27174 ab30649a6169102389fe194b6304d846 ""
-  "project_report_process.aux" 1778401681.69089 2871 989a1b5c0ad2782fc507bb6b6cf2a07c "pdflatex"
-  "project_report_process.bbl" 1778401715.03965 1834 b54dba49cc9ee68ab024695245666464 "bibtex project_report_process"
-  "project_report_process.out" 1778401680.9837 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "project_report_process.tex" 1778401692.83105 28318 0acaf0e5561fb5e04251c9a8e7fd73d8 ""
+  "icml2021.sty" 1778432657.43226 27174 ab30649a6169102389fe194b6304d846 ""
+  "project_report_process.aux" 1778432856.32661 2871 c98ea36dd97cfbd79f2de237c8cfc90a "pdflatex"
+  "project_report_process.bbl" 1778432736.81392 1834 b54dba49cc9ee68ab024695245666464 "bibtex project_report_process"
+  "project_report_process.out" 1778432855.41892 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "project_report_process.tex" 1778432854.62841 32314 e64f3f8f316467288f884f9b8c593a89 ""
   (generated)
   "project_report_process.aux"
   "project_report_process.log"
