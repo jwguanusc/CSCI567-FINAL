@@ -1,0 +1,38 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Breiman(1996)]{Breiman1996}
+Breiman, L.
+\newblock Stacked regressions.
+\newblock \emph{Machine Learning}, 24\penalty0 (1), 1996.
+
+\bibitem[Chen \& Guestrin(2016)Chen and Guestrin]{Chen2016}
+Chen, T. and Guestrin, C.
+\newblock Xgboost: A scalable tree boosting system.
+\newblock In \emph{Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}. ACM, 2016.
+
+\bibitem[Friedman(2001)]{Friedman2001}
+Friedman, J.~H.
+\newblock Greedy function approximation: A gradient boosting machine.
+\newblock \emph{The Annals of Statistics}, 29\penalty0 (5), 2001.
+
+\bibitem[Hoerl \& Kennard(1970)Hoerl and Kennard]{Hoerl1970}
+Hoerl, A.~E. and Kennard, R.~W.
+\newblock Ridge regression: Biased estimation for nonorthogonal problems.
+\newblock \emph{Technometrics}, 12\penalty0 (1), 1970.
+
+\bibitem[Tibshirani(1996)]{Tibshirani1996}
+Tibshirani, R.
+\newblock Regression shrinkage and selection via the lasso.
+\newblock \emph{Journal of the Royal Statistical Society: Series B}, 58\penalty0 (1), 1996.
+
+\bibitem[Wolpert(1992)]{Wolpert1992}
+Wolpert, D.~H.
+\newblock Stacked generalization.
+\newblock \emph{Neural Networks}, 5\penalty0 (2), 1992.
+
+\end{thebibliography}

@@ -45,14 +45,13 @@ Figure~\ref{fig:modelcomparison} summarizes the final RMSE performance across al
 \label{fig:modelcomparison}
 \end{figure}
 
-Among the linear models, Lasso Regression achieved slightly lower RMSE than Ridge Regression because L1 regularization performs 
+Among the linear models, Lasso Regression~\cite{Tibshirani1996} achieved slightly lower RMSE than Ridge Regression~\cite{Hoerl1970} because L1 regularization performs 
 implicit feature selection by shrinking less important coefficients to zero.
 
-Nonlinear models performed substantially better overall. Gradient Boosting significantly outperformed the linear approaches, 
+Nonlinear models performed substantially better overall. Gradient Boosting~\cite{Friedman2001} significantly outperformed the linear approaches, 
 suggesting that housing prices contain strong nonlinear relationships that simple linear models cannot fully capture.
 
-The Hybrid and Stacking models provided additional improvements beyond standalone Gradient Boosting. XGBoost achieved performance 
-comparable to Gradient Boosting, while the Ultimate Stacking model achieved the best overall RMSE of 0.1287 by combining predictions 
+The Hybrid and Stacking ensemble methods~\cite{Wolpert1992,Breiman1996} provided additional improvements beyond standalone Gradient Boosting. XGBoost~\cite{Chen2016} achieved performance comparable to Gradient Boosting, while the Ultimate Stacking model achieved the best overall RMSE of 0.1287 by combining predictions 
 from Lasso Regression, Gradient Boosting, and XGBoost.
 
 Although the improvements from ensemble methods were relatively modest, the results suggest that combining more diverse 
@@ -293,4 +292,8 @@ Transitioning to a Stacking Architecture, we evaluated three configurations: (La
 
 To further push the performance boundary, we integrated \textbf{XGBoost} into our ensemble. Unlike standard GBR, XGBoost incorporates advanced L1 and L2 regularization directly into its objective function, making it superior at handling the high-dimensional sparsity present in the Ames dataset. In our final architectural optimization, we pruned the redundant Ridge model and established a three-pillar Stacking framework comprising \textbf{Lasso, GBR, and XGBoost}. This synthesis successfully leveraged Lasso's global anchoring with the dual tree-based models' mastery of non-linear interactions, ultimately achieving our most robust and precise predictive performance (Test RMSE: 0.1287).
 
+\bibliographystyle{icml2021}
+\bibliography{main}
+
 \end{document}
+
