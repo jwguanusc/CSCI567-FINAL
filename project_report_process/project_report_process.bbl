@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -24,6 +24,16 @@ Friedman, J.~H.
 Hoerl, A.~E. and Kennard, R.~W.
 \newblock Ridge regression: Biased estimation for nonorthogonal problems.
 \newblock \emph{Technometrics}, 12\penalty0 (1), 1970.
+
+\bibitem[jesucristo(2017)]{top1_kaggle}
+jesucristo.
+\newblock \#1 house prices solution.
+\newblock \url{https://www.kaggle.com/code/jesucristo/1-house-prices-solution-top-1}, 2017.
+
+\bibitem[mviola(2018)]{lasso_lgbm}
+mviola.
+\newblock House prices eda, lasso \& lightgbm [0.11635].
+\newblock \url{https://www.kaggle.com/code/mviola/house-prices-eda-lasso-lightgbm-0-11635}, 2018.
 
 \bibitem[Tibshirani(1996)]{Tibshirani1996}
 Tibshirani, R.

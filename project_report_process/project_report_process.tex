@@ -25,6 +25,69 @@
 \vskip 0.3in
 ]
 
+\begin{abstract}
+
+This project investigates house price prediction using the Kaggle House Prices dataset, with a focus on comparing linear, nonlinear, and ensemble-based machine learning models. We evaluated Linear Regression, Ridge, Lasso, Gradient Boosting, and XGBoost, together with hybrid and stacking approaches. Our preprocessing pipeline included missing value handling, categorical feature encoding, and feature transformation. We found that purely linear models were insufficient for capturing complex relationships in housing data, while nonlinear ensemble methods significantly improved prediction performance. Furthermore, combining linear and nonlinear models through hybrid averaging and stacking produced more stable and accurate predictions than individual models. Our results highlight the importance of feature engineering and ensemble learning in structured regression tasks.
+
+\end{abstract}
+
+\section{Introduction}
+
+This project investigates house price prediction using the Kaggle House Prices: Advanced Regression Techniques dataset \href{https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques}
+{Kaggle House Prices Competition}. The task involves predicting housing sale prices from a mixture of numerical and categorical housing features, including property size, quality, neighborhood information, and construction details. Because housing prices depend on complex feature interactions and nonlinear relationships, this dataset provides an interesting setting for studying the performance and limitations of different machine learning models.
+
+Our project began as a comparison of regression approaches including Linear Regression, Ridge, Lasso, and nonlinear boosting methods. Over time, the project evolved into a more analytical investigation of when linear models become insufficient and whether combining linear and nonlinear models can improve the prediction's performance.We explored ensemble approaches including weighted hybrid models and stacking architectures.
+
+When reviewing prior work and public Kaggle submissions for this competition, we found that top-performing solutions relied heavily on feature engineering and ensemble learning techniques. The solution by \href{https://www.kaggle.com/code/jesucristo/1-house-prices-solution-top-1}
+{House Prices Solution [top 1]} \cite{top1_kaggle} demonstrated the effectiveness of combining multiple regression and boosting models for improved  performance. We also found \href{https://www.kaggle.com/code/mviola/house-prices-eda-lasso-lightgbm-0-11635}
+{House Prices EDA, Lasso, LightGBM} \cite{lasso_lgbm} particularly useful for combining linear regularized models such as Lasso with nonlinear boosting approaches such as LightGBM. These prior solutions helped with our feature engineering process.
+
+Inspired by these approaches, we investigate whether combining linear and nonlinear models can consistently outperform individual models alone. Our work focuses on predictive accuracy, and the effectiveness of ensemble learning in structured regression tasks.
+
+
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{../picture/pipeline_2.png}
+    \caption{Overview of the machine learning workflow used for house price prediction.}
+    \label{fig:pipeline}
+\end{figure*}
+
+\section{Methods}
+
+Figure~\ref{fig:pipeline} presents the overall machine learning workflow used in this project. Our methodology consists of four main stages: data preprocessing, linear regression baselines, nonlinear ensemble models, and ensemble combination strategies.
+
+\subsection{Data Preprocessing}
+
+The Kaggle House Prices dataset contains both numerical and categorical features with substantial missing values. Missing categorical values representing the absence of a property feature (e.g., pool or fence) were encoded accordingly, while numerical missing values were imputed using the median. Categorical variables were transformed using one-hot encoding.
+
+To improve model stability and reduce skewness, logarithmic and power transformations were applied to selected variables. In particular, the target variable \texttt{SalePrice} exhibited a strongly right-skewed distribution, motivating the use of a logarithmic transformation to reduce the influence of outliers and improve distribution symmetry.
+
+\subsection{Linear Regression Models}
+
+We first established baseline performance using ordinary least squares linear regression. These models served as  baselines for analyzing the limitations of linear assumptions in housing price prediction.
+To improve generalization and reduce overfitting, we additionally evaluated Ridge and Lasso regression models. Ridge regression introduces an L2 regularization penalty, while Lasso regression applies an L1 penalty that performs implicit feature selection. Regularization strengths were selected using cross-validation to balance model complexity and performance.
+
+\subsection{Nonlinear Ensemble Models}
+
+To capture nonlinear relationships and complex feature interactions within the housing dataset, we further evaluated nonlinear ensemble methods including Gradient Boosting Regression and XGBoost. Unlike linear models, boosting methods iteratively train decision trees on residual errors from previous predictors, enabling the models to learn nonlinear structures in the data.
+
+ We additionally conducted hyperparameter sensitivity analysis using cross-validation together with grid search and randomized search procedures. Hyperparameters including learning rate, tree depth, number of estimators, subsampling ratio, and minimum leaf size were tuned to improve predictive performance and reduce overfitting.
+
+\subsection{Ensemble Combination Strategies}
+
+To systematically study whether combining linear and nonlinear models improves prediction performance, we implemented both weighted hybrid averaging and stacking architectures.
+
+Our weighted hybrid model combines predictions from Ridge regression and Gradient Boosting through a convex combination:
+\[
+\hat y_{hybrid}= \alpha \hat y_{ridge} + (1-\alpha)\hat y_{GB}
+\]
+where $\alpha \in [0,1]$ controls the relative contribution of the linear Ridge regression model and the nonlinear Gradient Boosting model.
+
+We further implemented stacking architectures in which predictions from multiple base learners were used as inputs to a meta-learner that generated the final prediction. Multiple ensemble configurations were evaluated, including combinations of regularized linear models and nonlinear boosting models. These ensemble approaches aim to leverage the strengths of different model families while reducing the weaknesses of individual predictors.
+
+
+
 
 % =========================================== Start of Result ================================================
 
@@ -280,7 +343,7 @@ As demonstrated in Table \ref{tab:hyperparam_performance_comparison}, Randomized
 
 While the Gradient Boosting Regressor (GBR) demonstrated strong individual performance, it suffers from a fundamental limitation inherent to tree-based models: the lack of \textbf{extrapolation capability}. Because decision trees partition the feature space into constant leaf values, they cannot inherently predict values beyond the maximum price encountered in the training set. To mitigate this, we initially implemented a \textbf{Hybrid Ensemble} by blending our regularized Lasso model with GBR. Using cross-validation, we performed a grid search across a range of blending ratios (from 1:0 to 0:1) to identify the optimal weight distribution between linear trends and non-linear nuances.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.9\columnwidth]{../picture/hybrid_optimization.png}
 \caption{Cross-validation RMSE across different blending ratios for the Hybrid Ensemble.}
